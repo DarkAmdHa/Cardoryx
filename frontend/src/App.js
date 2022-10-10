@@ -7,7 +7,6 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import NewCard from './pages/NewCard'
 import Cards from './pages/Cards'
-import Card from './pages/Card'
 import CardExchange from './pages/CardExchange'
 import PrivateRoute from './components/PrivateRoute'
 
@@ -26,9 +25,6 @@ function App() {
             </Route>
             <Route path="/cards" element={<PrivateRoute />}>
               <Route path="/cards" element={<Cards />} />
-            </Route>
-            <Route path="/card/:cardId" element={<PrivateRoute />}>
-              <Route path="/card/:cardId" element={<Card />} />
             </Route>
             <Route path="/card-exchange" element={<PrivateRoute />}>
               <Route path="/card-exchange" element={<CardExchange />} />
