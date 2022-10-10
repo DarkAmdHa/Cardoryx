@@ -213,6 +213,8 @@ h3 {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   width: 48.2%;
   background: #fff;
   border-radius: 25px;
@@ -222,6 +224,9 @@ h3 {
   position: relative;
 }
 
+.card .btn {
+  margin-top: auto;
+}
 .card:before {
   content: '';
   position: absolute;
