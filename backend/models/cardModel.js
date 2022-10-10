@@ -19,7 +19,7 @@ const cardSchema = mongoose.Schema(
       type: String,
       required: [true, 'Please provide an email'],
     },
-    teleponeNumber: {
+    telephoneNumber: {
       type: String,
       required: false,
     },

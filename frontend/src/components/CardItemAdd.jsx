@@ -6,17 +6,18 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import addedTick from '../assets/addedTick.png'
 
-function CardItemAdd({ card, cards }) {
+function CardItemAdd({ card, userExists }) {
   const { isError, isSuccess, message } = useSelector((state) => state.cards)
 
   const dispatch = useDispatch()
-  let userExistsBool
-  cards.map((user) => {
-    const userExists = cards.find((card) => card.email === user.email)
-    userExistsBool = userExists ? true : false
-  })
-  const [isAdded, setIsAdded] = useState(userExistsBool)
+  const [isAdded, setIsAdded] = useState(false)
+
   const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    console.log(userExists)
+    setIsAdded(userExists)
+  }, [userExists])
 
   const addUserHandler = () => {
     setIsLoading(true)

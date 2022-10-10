@@ -14,10 +14,6 @@ function CardItem({ card }) {
       {card.telephoneNumber && (
         <div class="telephoneNumber">Numero Tel: {card.telephoneNumber}</div>
       )}
-
-      <Link to={`/card/${card._id}`} className="btn btn-reverse btn-sm">
-        Voir
-      </Link>
     </div>
   )
 }

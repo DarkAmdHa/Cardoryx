@@ -10,9 +10,13 @@ import CardItemAdd from '../components/CardItemAdd'
 import Spinner from '../components/Spinner'
 
 function CardExchange() {
-  const { isLoading, isError, message, users } = useSelector(
-    (state) => state.auth
-  )
+  const {
+    isLoading,
+    isError,
+    message,
+    user: currentUser,
+    users,
+  } = useSelector((state) => state.auth)
 
   const { cards, isLoadingCards, isErrorCards, isSuccessCards, messageCards } =
     useSelector((state) => state.cards)
@@ -50,16 +54,18 @@ function CardExchange() {
 
       <div className="cards">
         {users.map((user) => {
-          const userExists = cards.find((card) => card.email === user.email)
-          return (
-            <CardItemAdd
-              key={user._id}
-              card={user}
-              cards={users}
-              addUser={true}
-              userExists={userExists ? true : false}
-            />
+          const userExists = cards.find(
+            (card) => card.email === user.email && card._id != user._id
           )
+
+          if (user._id != currentUser._id)
+            return (
+              <CardItemAdd
+                key={user._id}
+                card={user}
+                userExists={userExists !== undefined ? true : false}
+              />
+            )
         })}
       </div>
     </>
