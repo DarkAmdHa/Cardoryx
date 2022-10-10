@@ -1,7 +1,7 @@
 {
-  "name": "support-desk",
+  "name": "cardoryx",
   "version": "1.0.0",
-  "description": "Support Ticket App",
+  "description": "Cardoryx App",
   "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
