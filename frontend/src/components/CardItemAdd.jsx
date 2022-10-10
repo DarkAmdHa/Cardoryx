@@ -15,7 +15,6 @@ function CardItemAdd({ card, userExists }) {
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-    console.log(userExists)
     setIsAdded(userExists)
   }, [userExists])
 
@@ -39,8 +38,6 @@ function CardItemAdd({ card, userExists }) {
       toast.success('Carte Ajoutée.')
       setIsAdded(true)
     }
-
-    dispatch(reset())
   }
   return (
     <div className="card">
